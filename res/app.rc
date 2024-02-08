@@ -1,0 +1,50 @@
+#include <windows.h>
+#include "version.h"
+
+#define VER_FILEVERSION             PLPAK_MAJOR_VERSION,PLPAK_MINOR_VERSION,PLPAK_PATCH_VERSION,PLPAK_TWEAK_VERSION
+#define VER_FILEVERSION_STR         "PLPAK_MAJOR_VERSION.PLPAK_MINOR_VERSION.PLPAK_PATCH_VERSION.PLPAK_TWEAK_VERSION\0"
+
+#define VER_PRODUCTVERSION          2024
+#define VER_PRODUCTVERSION_STR      "2024\0"
+
+#define VER_COMPANYNAME_STR         "Pagonia Land"
+#define VER_FILEDESCRIPTION_STR     "Packing Tool"
+#define VER_INTERNALNAME_STR        "plpaker"
+#define VER_LEGALCOPYRIGHT_STR      "Pagonia Land"
+#define VER_LEGALTRADEMARKS1_STR    "All rights reserved"
+#define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
+#define VER_ORIGINALFILENAME_STR    "plpaker.exe"
+#define VER_PRODUCTNAME_STR         "PLPaker"
+
+#define VER_COMPANYDOMAIN_STR       "https://pagonia.land/"
+
+// resource
+
+101 ICON "icon.ico"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     VER_FILEVERSION
+PRODUCTVERSION  VER_PRODUCTVERSION
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "CompanyName",        VER_COMPANYNAME_STR
+            VALUE "FileDescription",    VER_FILEDESCRIPTION_STR
+            VALUE "FileVersion",        VER_FILEVERSION_STR
+            VALUE "InternalName",       VER_INTERNALNAME_STR
+            VALUE "LegalCopyright",     VER_LEGALCOPYRIGHT_STR
+            VALUE "LegalTrademarks1",   VER_LEGALTRADEMARKS1_STR
+            VALUE "LegalTrademarks2",   VER_LEGALTRADEMARKS2_STR
+            VALUE "OriginalFilename",   VER_ORIGINALFILENAME_STR
+            VALUE "ProductName",        VER_PRODUCTNAME_STR
+            VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

@@ -1,0 +1,23 @@
+﻿---
+AccessModifierOffset: '-4'
+AlignAfterOpenBracket: Align
+AlignEscapedNewlines: DontAlign
+AllowShortFunctionsOnASingleLine: Empty
+AlwaysBreakAfterReturnType: None
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Attach
+BreakConstructorInitializers: BeforeColon
+ColumnLimit: '0'
+ConstructorInitializerIndentWidth: '0'
+ContinuationIndentWidth: '4'
+IncludeBlocks: Merge
+IndentPPDirectives: BeforeHash
+IndentWidth: '4'
+MaxEmptyLinesToKeep: '1'
+NamespaceIndentation: Inner
+PointerAlignment: Left
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: '1'
+UseTab: Never
+
+...

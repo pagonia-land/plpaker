@@ -1,0 +1,5 @@
+include(win)
+
+[settings]
+build_type=Debug
+compiler.runtime=MDd
