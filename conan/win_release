@@ -1,5 +1,0 @@
-include(win)
-
-[settings]
-build_type=Release
-compiler.runtime=MD

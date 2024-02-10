@@ -67,8 +67,6 @@ cd build
 ```bash
 # debug
 
-conan install ../conan/file.txt -pr="../conan/win_debug"
-
 cmake ..
 cmake --build . --parallel
 ```
@@ -78,25 +76,14 @@ Do you prefer an optimized version:
 ```bash
 # release
 
-conan install ../conan/file.txt -pr="../conan/win_release"
-
 cmake -D CMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release --parallel
-```
-
-When a library is missing after all:
-
-```bash
-# append conan install
-
---build=missing
 ```
 
 ## Requirements
 
 * **C++23** compatible compiler
 * [CMake](https://cmake.org/) **3.26+**
-* [Conan](https://www.conan.io/)
 
 # Third-Party
 
