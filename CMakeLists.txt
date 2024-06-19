@@ -14,7 +14,7 @@ FetchContent_MakeAvailable(json)
 FetchContent_Declare(
   zlib
   GIT_REPOSITORY https://github.com/madler/zlib.git
-  GIT_TAG        d9243a0f066fd0ad6e7597be620ab8d8bfe5ae72
+  GIT_TAG        51b7f2abdade71cd9bb0e7a373ef2610ec6f9daf
 )
 FetchContent_MakeAvailable(zlib)
 
