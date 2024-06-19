@@ -28,7 +28,6 @@ commands:
 options:
   -c | --compress       # Unpack/Pack compressed files
   -d | --decompress     # Unpack/Pack decompressed files
-  -p | --png            # Export images as PNG (unpack and decompress only)
 
 If no options are specified, all options are active, otherwise only the set ones.
 
@@ -89,7 +88,6 @@ cmake --build . --config Release --parallel
 
 * [argh](https://github.com/adishavit/argh) &nbsp; **Argh! A minimalist argument handler** &nbsp; *3-clause BSD*
 * [zlib](https://github.com/madler/zlib) &nbsp; **A massively spiffy yet delicately unobtrusive compression library** &nbsp; *zlib*
-* [stb](https://github.com/nothings/stb) &nbsp; **Single-file public domain libraries for C/C++** &nbsp; *MIT*
 * [json](https://github.com/nlohmann/json) &nbsp; **JSON for Modern C++** &nbsp; *MIT*
 
 ## Collaborate

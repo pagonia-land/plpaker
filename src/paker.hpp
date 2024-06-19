@@ -83,7 +83,6 @@ struct paker {
     struct options {
         bool compress = true;
         bool decompress = true;
-        bool png = true;
     };
     options options;
 

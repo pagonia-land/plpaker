@@ -7,9 +7,6 @@
 #include <format>
 #include <fstream>
 
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
-
 namespace pl {
 using json = nlohmann::json;
 
@@ -517,37 +514,6 @@ bool paker::unpack(pak::ptr pak,
             decompressed_file.close();
 
             data = data_decompressed.ptr;
-        }
-
-        if (options.decompress && options.png) {
-            auto do_export = false;
-
-            if (data_file.extension() == ".image")
-                do_export = true;
-            else if (data_file.extension() == ".texture")
-                do_export = data_file.filename().string().contains("raw");
-
-            if (do_export) {
-                auto const width = to_uint_le(data + 12);
-                auto const height = to_uint_le(data + 16);
-
-                auto const block_size = 4;
-                auto const stride_bytes = width * block_size;
-
-                auto const image_data = data + 48;
-
-                auto png_file = data_file;
-                png_file += ".png";
-
-                if (!stbi_write_png(png_file.string().c_str(),
-                                    width, height,
-                                    block_size,
-                                    image_data,
-                                    stride_bytes)) {
-                    on_log_error(std::format("cannot write file: {}", png_file.string()));
-                    return false;
-                }
-            }
         }
     }
 

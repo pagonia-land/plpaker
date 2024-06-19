@@ -12,13 +12,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(json)
 
 FetchContent_Declare(
-  stb
-  GIT_REPOSITORY https://github.com/nothings/stb.git
-  GIT_TAG        b7cf1246284b49dfe7f1288e6f739b7a3a9d966b
-)
-FetchContent_MakeAvailable(stb)
-
-FetchContent_Declare(
   zlib
   GIT_REPOSITORY https://github.com/madler/zlib.git
   GIT_TAG        d9243a0f066fd0ad6e7597be620ab8d8bfe5ae72
@@ -46,7 +39,6 @@ PUBLIC
 target_include_directories(plpak
 PRIVATE
   ${PROJECT_BINARY_DIR}
-  ${stb_SOURCE_DIR}
 )
 
 target_link_libraries(plpak

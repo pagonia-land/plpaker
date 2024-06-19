@@ -29,7 +29,6 @@ int main(int, char* argv[]) {
         cout << "options:" << endl;
         cout << "  -c | --compress       # Unpack/Pack compressed files" << endl;
         cout << "  -d | --decompress     # Unpack/Pack decompressed files" << endl;
-        cout << "  -p | --png            # Export images as PNG (unpack and decompress only)" << endl;
         cout << endl;
         cout << "If no options are specified, all options are active, otherwise only the set ones." << endl;
         cout << endl;
@@ -59,7 +58,6 @@ int main(int, char* argv[]) {
     if (!cmd_line.flags().empty()) {
         paker.options.compress = cmd_line[{"-d", "--compress"}];
         paker.options.decompress = cmd_line[{"-d", "--decompress"}];
-        paker.options.png = cmd_line[{"-p", "--png"}];
     }
 
     cmd_line({"-s", "--start"}) >> paker.parameters.start;
