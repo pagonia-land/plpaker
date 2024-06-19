@@ -1,6 +1,5 @@
 #include "paker.hpp"
 #include "nlohmann/json.hpp"
-#include "version.h"
 #include "zlib.h"
 #include <climits>
 #include <cmath>
@@ -9,6 +8,8 @@
 
 namespace pl {
 using json = nlohmann::json;
+
+const char plpaker_version[] = "0.12.0";
 
 const char compressed_extension[] = ".comp";
 const char pakinfo_json[] = "pakinfo.json";
@@ -145,7 +146,7 @@ bool pak::load(fs::path const& pakinfo_file) {
     auto j = json::parse(data.ptr, data.ptr + data_size);
     if (j.count("paker")) {
         string const j_version = j["paker"];
-        if (j_version != PLPAK_VERSION)
+        if (j_version != plpaker_version)
             return false;
     }
 
@@ -227,7 +228,7 @@ bool pak::write_info(fs::path const& output_path) const {
     }
 
     json j;
-    j["paker"] = PLPAK_VERSION;
+    j["paker"] = plpaker_version;
 
     j["length"] = length;
     j["max_size"] = max_size;
@@ -434,7 +435,7 @@ void write_index(pak::ptr pak, std::ofstream& stream, uLong crc) {
 
 //-----------------------------------------------------------------------------
 paker::paker()
-: version(PLPAK_VERSION) {
+: version(plpaker_version) {
 }
 
 //-----------------------------------------------------------------------------
