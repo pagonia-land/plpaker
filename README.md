@@ -70,7 +70,7 @@ cmake ..
 cmake --build . --parallel
 ```
 
-Do you prefer an optimized version:
+And for an optimized version:
 
 ```bash
 # release
